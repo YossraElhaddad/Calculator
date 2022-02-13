@@ -15,17 +15,18 @@ body {
     background-color: darkblue;
     border: 3px solid black;
     border-radius: 25px;
-    align-items: flex-start;
+    align-items: center;
 }
 
 p {
     font-weight: bold;
-    font-size: 40px;
+    font-size: 70px;
     background-color: rgb(255, 194, 170);
     width: 500px;
-    height: 100px;
+    height: fit-content;
     border-radius: 5px;
     border: 1px solid black;
+    margin: 40px auto;
 }
 
 .buttons {
