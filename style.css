@@ -18,12 +18,12 @@ body {
     align-items: center;
 }
 
-p {
+#container .result {
     font-weight: bold;
     font-size: 70px;
     background-color: rgb(255, 194, 170);
     width: 500px;
-    height: fit-content;
+    height: 90px;
     border-radius: 5px;
     border: 1px solid black;
     margin: 40px auto;
@@ -58,7 +58,7 @@ button {
     width: 125px;
     height: 110px;
     text-align: center;
-    font-size: 40px;
+    font-size: 50px;
     border-radius: 5px;
     border: 2px solid black;
 }
