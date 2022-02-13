@@ -1,0 +1,80 @@
+body {
+    background-color: cornflowerblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    display: flex;
+    width: 500px;
+    height: 750px;
+    flex-direction: column;
+    padding: 8px 20px;
+    background-color: darkblue;
+    border: 3px solid black;
+    border-radius: 25px;
+    align-items: flex-start;
+}
+
+p {
+    font-weight: bold;
+    font-size: 40px;
+    background-color: rgb(255, 194, 170);
+    width: 500px;
+    height: 100px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.buttons {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.operators {
+    display: flex;
+    flex-direction: column;
+}
+
+.numbers {
+    display: flex;
+    flex-direction: column;
+}
+
+.row-1,
+.row-2,
+.row-3,
+.row-4,
+.row-5 {
+    display: flex;
+}
+
+button {
+    width: 125px;
+    height: 110px;
+    text-align: center;
+    font-size: 40px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.numbers button {
+    background-color: white;
+    font-weight: bold;
+}
+
+.operators button {
+    background-color: lightgray;
+    color: rgb(12, 12, 12);
+}
+
+.row-1 .clear {
+    background-color: orange;
+}
+
+.row-1 .white-space {
+    width: 250px;
+}
