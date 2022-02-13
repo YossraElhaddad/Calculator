@@ -78,10 +78,10 @@ buttons.forEach((button) => {
                 input = "";
 
                 if (textInput.length == 2 && operatorInput.length == 2) {
-                    input = operate(operatorInput[0], textInput[0], textInput[1]).toFixed(3).toString();
+                    input = operate(operatorInput[0], textInput[0], textInput[1]);
 
                     if (!Number.isInteger(input))
-                        input = input.toFixed();
+                        input = input.toFixed(3);
                     input = input.toString();
 
                     textInput = [];
