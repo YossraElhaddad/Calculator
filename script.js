@@ -80,9 +80,16 @@ buttons.forEach((button) => {
                 if (textInput.length == 2 && operatorInput.length == 2) {
                     input = operate(operatorInput[0], textInput[0], textInput[1]);
 
-                    if (!Number.isInteger(input))
-                        input = input.toFixed(3);
-                    input = input.toString();
+                    //display the error message
+                    if (typeof input === "string") {
+                        { result.textContent = input; }
+                    } else {
+                        if (!Number.isInteger(input))
+                            input = input.toFixed(3);
+                        input = input.toString();
+                    }
+
+
 
                     textInput = [];
 
