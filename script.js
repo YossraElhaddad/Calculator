@@ -3,7 +3,6 @@ let input = "";
 let textInput = [];
 let operatorInput = [];
 const buttons = document.querySelectorAll('button');
-const numbers = document.querySelectorAll('.numbers .number');
 
 function add(num1, num2) {
     return (num1 + num2);
@@ -40,17 +39,22 @@ function operate(operator, num1, num2) {
 
 }
 
+function clear() {
+    input = "";
+    result.textContent = "";
+    textInput = [];
+    operatorInput = [];
+}
+
 buttons.forEach((button) => {
 
     button.addEventListener('click', () => {
 
-        if (button.className === "clear") {
-            input = "";
-            result.textContent = "";
-            textInput = [];
-            operatorInput = [];
+        if (button.className === "clear")
+            clear();
 
-        } else if (button.className === "positive-negative") {
+
+        else if (button.className === "positive-negative") {
             if (result.textContent) {
                 result.textContent = "" + (- +(result.textContent));
                 input = result.textContent;
@@ -66,7 +70,7 @@ buttons.forEach((button) => {
             result.textContent = input;
 
         } else if (button.className === "operator") {
-
+            //evaluate only two operands at a time
             if (operatorInput.length < 2 && textInput.length < 2) {
                 let operator = button.textContent;
                 textInput.push(result.textContent);
@@ -75,7 +79,13 @@ buttons.forEach((button) => {
 
                 if (textInput.length == 2 && operatorInput.length == 2) {
                     input = operate(operatorInput[0], textInput[0], textInput[1]).toFixed(3).toString();
+
+                    if (!Number.isInteger(input))
+                        input = input.toFixed();
+                    input = input.toString();
+
                     textInput = [];
+
                     if (operatorInput[1] === "=")
                         operatorInput = [];
                     else {
@@ -83,7 +93,6 @@ buttons.forEach((button) => {
                         textInput.push(input);
                     }
 
-                    //textInput = textInput.slice(0,2);
                     result.textContent = input;
                     input = "";
                 }
